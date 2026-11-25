@@ -13,7 +13,7 @@ const PROVIDERS = [
   { slug: "forsa", name: "فرصة (Forsa)", site: "https://www.forsaegypt.com/ar", keys: ["فرصة", "forsa"], q: "فرصة" },
   { slug: "souhoola", name: "سهولة (Souhoola)", site: "https://souhoola.com", keys: ["سهولة", "souhoola", "sohoola"], q: "سهولة" },
   { slug: "halan", name: "حالا (Halan)", site: "https://halan.com", keys: ["حالا", "halan"], q: "حالا تقسيط" },
-  { slug: "valu", name: "valU", site: "https://valu.com.eg", keys: ["valu", "فاليو"], q: "valU" },
+  { slug: "valu", name: "valU", site: "https://valugroup.com", keys: ["valu", "فاليو"], q: "valU" },
   { slug: "contact", name: "كونتاكت (Contact)", site: "https://contact.eg", keys: ["كونتاكت", "contact"], q: "كونتاكت تقسيط" },
   { slug: "aman", name: "أمان (Aman)", site: "https://www.amanholding.com", keys: ["أمان", "aman"], q: "أمان تقسيط" },
   { slug: "sympl", name: "سيمبل (Sympl)", site: "https://sympl.ai", keys: ["سيمبل", "sympl"], q: "سيمبل تقسيط" },
@@ -185,9 +185,12 @@ const list = [...offers.values()].map((o) => {
 
 const storeMap = new Map();
 for (const o of list) if (!storeMap.has(o.store)) storeMap.set(o.store, { slug: o.store, name: o.storeName, site: o.storeSite });
-const stores = [...storeMap.values()].map((s) => ({ ...s, site: s.site || STORE_ALIASES.find((a) => a.slug === s.slug)?.site || null }));
+const SITES = fs.existsSync("data/sites.json") ? JSON.parse(fs.readFileSync("data/sites.json", "utf8")) : {};
+const stores = [...storeMap.values()].map((s) => ({ ...s, site: s.site || STORE_ALIASES.find((a) => a.slug === s.slug)?.site || SITES[s.slug] || null }));
 const usedProv = new Set(list.map((o) => o.provider));
-const providers = PROVIDERS.filter((p) => usedProv.has(p.slug)).map(({ slug, name, site }) => ({ slug, name, site }));
+// valU, Halan and Contact publish their offers only inside their apps; their official sites list no offers. They are kept in the list with a flag.
+const APP_ONLY = { valu: "https://valugroup.com/personal/shopit", halan: "https://halan.com/shop/", contact: "https://contact.eg/our-offers" };
+const providers = PROVIDERS.filter((p) => usedProv.has(p.slug) || APP_ONLY[p.slug]).map(({ slug, name, site }) => ({ slug, name, site, ...(usedProv.has(slug) || !APP_ONLY[slug] ? {} : { appOnly: true, offersPage: APP_ONLY[slug] }) }));
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
-fs.writeFileSync(OUT, JSON.stringify({ updatedAt: new Date().toISOString(), sources: ["https://www.bankygate.com"], stores, providers, offers: list, seen }, null, 1));
+fs.writeFileSync(OUT, JSON.stringify({ updatedAt: new Date().toISOString(), sources: ["https://www.bankygate.com", "https://valugroup.com", "https://halan.com", "https://contact.eg"], stores, providers, offers: list, seen }, null, 1));
 console.log("stores", stores.length, "providers", providers.length, "active", list.filter((o) => o.status === "active").length);

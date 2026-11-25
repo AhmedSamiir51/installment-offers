@@ -1,7 +1,10 @@
 {
  "updatedAt": "2026-11-25T15:10:50.853Z",
  "sources": [
-  "https://www.bankygate.com"
+  "https://www.bankygate.com",
+  "https://valugroup.com",
+  "https://halan.com",
+  "https://contact.eg"
  ],
  "stores": [
   {
@@ -32,7 +35,7 @@
   {
    "slug": "gb-tires",
    "name": "GB Tires",
-   "site": null
+   "site": "https://www.gb-auto.com/en/tires/"
   },
   {
    "slug": "btech",
@@ -42,12 +45,12 @@
   {
    "slug": "ehab-center",
    "name": "Ehab Center",
-   "site": null
+   "site": "https://ehabcenter.com/"
   },
   {
    "slug": "games2egypt",
    "name": "Games2Egypt",
-   "site": null
+   "site": "https://www.games2egypt.com/"
   },
   {
    "slug": "raya",
@@ -62,7 +65,7 @@
   {
    "slug": "enarat",
    "name": "Enarat",
-   "site": null
+   "site": "https://enarat.com/"
   },
   {
    "slug": "orange",
@@ -77,27 +80,27 @@
   {
    "slug": "xprs",
    "name": "XPRS",
-   "site": null
+   "site": "https://myxprs.com/"
   },
   {
    "slug": "kemitt",
    "name": "Kemitt",
-   "site": null
+   "site": "https://www.kemitt.com/en-eg/"
   },
   {
    "slug": "ghataty",
    "name": "Ghataty",
-   "site": null
+   "site": "https://ghataty.com/"
   },
   {
    "slug": "mobilaty",
    "name": "Mobilaty",
-   "site": null
+   "site": "https://mobilaty.com/"
   },
   {
    "slug": "cairo-cart",
    "name": "Cairo Cart",
-   "site": null
+   "site": "https://cairocart.com/en/"
   },
   {
    "slug": "carrefour",
@@ -107,32 +110,32 @@
   {
    "slug": "elaggar",
    "name": "ElAggar",
-   "site": null
+   "site": "https://elaggargroup.com/"
   },
   {
    "slug": "jlood",
    "name": "JLOOD",
-   "site": null
+   "site": "https://jlood.com/"
   },
   {
    "slug": "lulu-hypermarket",
    "name": "Lulu Hypermarket",
-   "site": null
+   "site": "https://www.luluhypermarket.com/en-eg"
   },
   {
    "slug": "fit-fix",
    "name": "Fit & Fix",
-   "site": null
+   "site": "https://www.fitandfix.com/"
   },
   {
    "slug": "carina",
    "name": "CARINA",
-   "site": null
+   "site": "https://carina.eg/"
   },
   {
    "slug": "wayup-sports",
    "name": "WayUp Sports",
-   "site": null
+   "site": "https://wayupsports.com/"
   },
   {
    "slug": "sharaf-dg",
@@ -142,7 +145,7 @@
   {
    "slug": "blackcircles",
    "name": "Blackcircles",
-   "site": null
+   "site": "https://www.blackcircles.com.eg/en"
   },
   {
    "slug": "noon",
@@ -152,12 +155,12 @@
   {
    "slug": "panco",
    "name": "Panco",
-   "site": null
+   "site": "https://pancoegypt.com/en"
   },
   {
    "slug": "huawei",
    "name": "HUAWEI",
-   "site": null
+   "site": "https://consumer.huawei.com/eg-en/"
   },
   {
    "slug": "amazon",
@@ -180,6 +183,27 @@
    "slug": "aman",
    "name": "أمان (Aman)",
    "site": "https://www.amanholding.com"
+  },
+  {
+   "slug": "valu",
+   "name": "valU",
+   "site": "https://valugroup.com",
+   "appOnly": true,
+   "offersPage": "https://valugroup.com/personal/shopit"
+  },
+  {
+   "slug": "halan",
+   "name": "حالا (Halan)",
+   "site": "https://halan.com",
+   "appOnly": true,
+   "offersPage": "https://halan.com/shop/"
+  },
+  {
+   "slug": "contact",
+   "name": "كونتاكت (Contact)",
+   "site": "https://contact.eg",
+   "appOnly": true,
+   "offersPage": "https://contact.eg/our-offers"
   }
  ],
  "offers": [

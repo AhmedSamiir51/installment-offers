@@ -1,6 +1,6 @@
 import bundled from "../data/offers.json";
 export type Store = { slug: string; name: string; site: string | null };
-export type Provider = { slug: string; name: string; site: string | null };
+export type Provider = { slug: string; name: string; site: string | null; appOnly?: boolean; offersPage?: string };
 export type Offer = {
   id: string; store: string; provider: string; title: string;
   discount: number | null; discountUpTo: boolean; maxMonths: number | null;

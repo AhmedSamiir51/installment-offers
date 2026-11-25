@@ -14,6 +14,7 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
     <div className="sec">المتاجر الشريكة ({stores.length})</div>
     <div className="chips">{stores.map(s => <Link key={s.slug} className="chip" href={"/stores/" + s.slug}>{s.name}</Link>)}</div>
     <div className="sec">العروض</div>
+    {offers.length === 0 && <div className="card muted">{p.name} بتنشر عروضها جوه تطبيقها بس، والموقع الرسمي مفيهوش عروض معلنة نقدر نسحبها. أول ما تظهر في أي مصدر عام هتظهر هنا تلقائي.{p.offersPage && <> <a className="link" href={p.offersPage} target="_blank" rel="noreferrer">الصفحة الرسمية ↗</a></>}</div>}
     <OfferList offers={offers} show="provider" stores={d.stores} providers={d.providers} />
   </>);
 }

@@ -16,7 +16,8 @@ export default async function Home() {
       <span className="pill"><span className="upd"><i />بيتحدث تلقائي · آخر تحديث {upd}</span></span>
       <h1>كل عروض التقسيط.<br /><span className="grad">في مكان واحد.</span></h1>
       <p className="lead">شوف أي شركة تقسيط شغالة مع أي متجر، وإيه العرض، وإنت بتشتري. من غير ما تفتح ألف تطبيق.</p>
-      <div className="btns"><Link className="btn p" href="/stores">تصفح المتاجر</Link><Link className="btn s" href="/providers">شركات التقسيط</Link></div>
+      <form action="/search" className="hsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg><input name="q" type="search" placeholder="دور على متجر أو شركة أو عرض" /></form>
+      <div className="btns"><Link className="cta" href="/stores"><span>تصفح المتاجر</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M15 5l-7 7 7 7" /></svg></i></Link><Link className="btn s" href="/providers">شركات التقسيط</Link></div>
     </section>
     <Reveal><div className="grid" style={{ gridTemplateColumns: "repeat(3,1fr)" }}>
       <div className="card stat"><b>{activeCount(d.offers)}</b><span>عرض ساري</span></div>

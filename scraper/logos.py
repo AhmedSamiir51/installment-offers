@@ -2,10 +2,10 @@ import json,re,sys,urllib.request,urllib.parse,os
 UA={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36"}
 def get(u,t=15):
     r=urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=t);return r.read(),r.headers.get("content-type","")
-d=json.load(open("data/offers.json"));res={}
+d=json.load(open("data/offers.json"));res=json.load(open("data/logos.json")) if os.path.exists("data/logos.json") else {}
 for e in d["stores"]+d["providers"]:
     s=e.get("site")
-    if not s: continue
+    if not s or e["slug"] in res: continue
     try:
         html=get(s)[0].decode("utf8","ignore")
     except Exception as ex:
@@ -29,6 +29,14 @@ for e in d["stores"]+d["providers"]:
             ext=".svg" if b"<svg" in b[:300] else ".ico" if u.endswith(".ico") else ".png" if b[:4]==b"\x89PNG" else ".jpg" if b[:2]==b"\xff\xd8" else ".webp" if b[:4]==b"RIFF" else None
             if not ext: continue
             fn=f"public/logos/{e['slug']}{ext}";open(fn,"wb").write(b);res[e["slug"]]="/logos/"+e["slug"]+ext;print("OK",e["slug"],u[:80],len(b));ok=True;break
+        except Exception as ex: pass
+    if not ok:
+        # site blocks automated page fetch: use the icon service for that site's domain
+        try:
+            dom=urllib.parse.urlparse(s).netloc
+            b,ct=get("https://www.google.com/s2/favicons?domain="+dom+"&sz=128")
+            if b[:4]==b"\x89PNG" and len(b)>600:
+                fn=f"public/logos/{e['slug']}.png";open(fn,"wb").write(b);res[e["slug"]]="/logos/"+e["slug"]+".png";print("OK(favicon svc)",e["slug"],len(b));ok=True
         except Exception as ex: pass
     if not ok: print("NONE",e["slug"])
 json.dump(res,open("data/logos.json","w"),indent=1)

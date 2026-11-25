@@ -36,7 +36,7 @@ export default function Calc() {
       <div className="sub"><div><small>إجمالي ما هتدفعه</small><b>{fmt(t)}</b></div><div><small>الزيادة عن السعر</small><b>{fmt(x)}</b></div></div>
       <div className="bar"><i style={{ width: pct + "%" }} /><i style={{ width: 100 - pct + "%" }} /></div>
       <div className="legend"><span>⚪ سعر الجهاز</span><span>🟡 فايدة ومصاريف</span></div>
-      {extra < 1 && <div className="zero">✨ من غير أي زيادة عن السعر (تريبل زيرو)</div>}
+      {extra < 1 && <div className="zero">من غير أي زيادة عن السعر (تريبل زيرو)</div>}
     </div>
     <div className="card" style={{ marginTop: 14 }}>
       <Field label="سعر الجهاز" value={price} set={setPrice} min={1000} max={150000} step={500} unit="جنيه" />
