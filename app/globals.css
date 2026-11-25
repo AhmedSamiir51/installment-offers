@@ -116,3 +116,29 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
 .avatar.logo img{width:100%;height:100%;object-fit:contain;display:block}
 .head .avatar.logo{padding:10px}
 @media (prefers-color-scheme:dark){.avatar.logo{box-shadow:none}}
+/* ===== liquid glass ===== */
+:root{--glass:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.28));--glass-b:rgba(255,255,255,.55);--hl:inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(255,255,255,.35),inset 0 0 22px rgba(255,255,255,.35);--gsh:0 18px 40px -18px rgba(40,60,120,.35),0 2px 6px rgba(40,60,120,.08)}
+@media(prefers-color-scheme:dark){:root{--glass:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.05));--glass-b:rgba(255,255,255,.18);--hl:inset 0 1.5px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.08),inset 0 0 22px rgba(255,255,255,.06);--gsh:0 18px 40px -18px #000,0 2px 6px rgba(0,0,0,.4)}}
+body{background:var(--bg);position:relative}
+body::before{content:"";position:fixed;inset:-10%;z-index:-1;pointer-events:none;background:radial-gradient(40% 32% at 15% 12%,rgba(122,92,255,.38),transparent 70%),radial-gradient(38% 30% at 90% 22%,rgba(0,194,255,.35),transparent 70%),radial-gradient(42% 34% at 70% 85%,rgba(255,106,176,.28),transparent 70%),radial-gradient(36% 30% at 8% 80%,rgba(52,199,89,.2),transparent 70%)}
+.card,.pill,.chip,.btn.s,.search,.tabs,.top,.avatar.logo,.badge{background:var(--glass);backdrop-filter:blur(26px) saturate(190%);-webkit-backdrop-filter:blur(26px) saturate(190%);border:1px solid var(--glass-b);box-shadow:var(--hl),var(--gsh)}
+.card{position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.5) 0,rgba(255,255,255,0) 28%);opacity:.55}
+@media(prefers-color-scheme:dark){.card::after{opacity:.12}}
+.top{border-bottom:1px solid var(--glass-b);border-radius:0 0 22px 22px;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,.3))}
+@media(prefers-color-scheme:dark){.top{background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.05))}}
+.tabs{border-radius:32px;padding:7px}
+.tabs a{border-radius:26px;position:relative}
+.tabs a.on{color:var(--accent);background:linear-gradient(160deg,rgba(255,255,255,.85),rgba(255,255,255,.3));box-shadow:var(--hl),0 6px 16px -8px rgba(0,80,220,.5)}
+@media(prefers-color-scheme:dark){.tabs a.on{background:linear-gradient(160deg,rgba(255,255,255,.25),rgba(255,255,255,.07))}}
+.btn.p{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.38),rgba(255,255,255,0) 52%),linear-gradient(135deg,#0a84ff,#6e5bff);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.8),inset 0 -8px 16px rgba(20,0,120,.25),0 14px 30px -10px rgba(40,80,255,.65)}
+.btn.p::after{content:"";position:absolute;left:8%;right:8%;top:2px;height:46%;border-radius:99px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0));pointer-events:none}
+.btn.s{color:var(--text)}
+.tabs svg,.logo i{filter:drop-shadow(0 1px 1px rgba(255,255,255,.6))}
+.logo i{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.8),inset 0 -5px 10px rgba(30,0,120,.25),0 6px 14px -6px var(--accent)}
+.avatar{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7),inset 0 -6px 12px rgba(0,0,0,.15),0 8px 18px -8px rgba(0,0,0,.35)}
+.avatar.logo{box-shadow:var(--hl),var(--gsh);background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(255,255,255,.65))}
+.badge.on{background:linear-gradient(160deg,rgba(52,199,89,.35),rgba(52,199,89,.12));color:#117a3a;border-color:rgba(52,199,89,.35)}
+.badge.off{background:linear-gradient(160deg,rgba(140,140,150,.28),rgba(140,140,150,.1))}
+a.chip:hover{background:linear-gradient(135deg,#0a84ff,#6e5bff);color:#fff}
+.search{border-radius:99px}
