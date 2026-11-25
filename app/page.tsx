@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getData, activeCount } from "../lib/data";
+import Logo from "../components/Logo";
 import Reveal from "../components/Reveal";
 import OfferCard from "../components/OfferCard";
 export const revalidate = 1800;
@@ -26,8 +27,8 @@ export default async function Home() {
     <div className="grid two">{shown.map(o => <Reveal key={o.id}><OfferCard o={o} show="both" store={S(o.store)} provider={P(o.provider)} /></Reveal>)}</div>
     <div className="sec">تصفح من ناحيتين</div>
     <div className="grid two">
-      <Reveal><Link href="/stores" className="card" style={{ display: "block" }}><div className="avatar">M</div><span className="arrow">←</span><h3>من المتجر</h3><div className="muted">اختار المتجر وشوف كل شركات التقسيط وعروضها عنده.</div></Link></Reveal>
-      <Reveal delay={100}><Link href="/providers" className="card" style={{ display: "block" }}><div className="avatar g">F</div><span className="arrow">←</span><h3>من شركة التقسيط</h3><div className="muted">اختار الشركة وشوف كل المتاجر الشريكة وعروضها.</div></Link></Reveal>
+      <Reveal><Link href="/stores" className="card" style={{ display: "block" }}><Logo slug="miami-center" ini="M" hue={210} /><span className="arrow">←</span><h3>من المتجر</h3><div className="muted">اختار المتجر وشوف كل شركات التقسيط وعروضها عنده.</div></Link></Reveal>
+      <Reveal delay={100}><Link href="/providers" className="card" style={{ display: "block" }}><Logo slug="forsa" ini="F" hue={30} /><span className="arrow">←</span><h3>من شركة التقسيط</h3><div className="muted">اختار الشركة وشوف كل المتاجر الشريكة وعروضها.</div></Link></Reveal>
     </div>
     <Reveal><Link href="/calculator" className="card" style={{ display: "block", marginTop: 14 }}><span className="arrow">←</span><h3>حاسبة القسط</h3><div className="muted">السعر والمقدم والفايدة والمصاريف والشهور، والقسط يتحسب قدامك.</div></Link></Reveal>
     <p className="note">العروض مجمعة تلقائي من إعلانات منشورة للعامة (بنكي)، مش من حسابك داخل التطبيقات. تأكد من الشروط جوه تطبيق الشركة قبل ما تشتري.</p>
