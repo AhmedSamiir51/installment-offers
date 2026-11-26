@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T15:10:50.853Z",
+ "updatedAt": "2026-11-26T00:25:54.609Z",
  "sources": [
   "https://www.bankygate.com",
   "https://valugroup.com",
@@ -180,9 +180,11 @@
    "site": "https://souhoola.com"
   },
   {
-   "slug": "aman",
-   "name": "أمان (Aman)",
-   "site": "https://www.amanholding.com"
+   "slug": "halan",
+   "name": "حالا (Halan)",
+   "site": "https://halan.com",
+   "appOnly": true,
+   "offersPage": "https://halan.com/shop/"
   },
   {
    "slug": "valu",
@@ -192,18 +194,16 @@
    "offersPage": "https://valugroup.com/personal/shopit"
   },
   {
-   "slug": "halan",
-   "name": "حالا (Halan)",
-   "site": "https://halan.com",
-   "appOnly": true,
-   "offersPage": "https://halan.com/shop/"
-  },
-  {
    "slug": "contact",
    "name": "كونتاكت (Contact)",
    "site": "https://contact.eg",
    "appOnly": true,
    "offersPage": "https://contact.eg/our-offers"
+  },
+  {
+   "slug": "aman",
+   "name": "أمان (Aman)",
+   "site": "https://www.amanholding.com"
   }
  ],
  "offers": [
@@ -225,7 +225,7 @@
    "endKnown": true,
    "published": "2026-11-25",
    "source": "https://www.bankygate.com/203140",
-   "status": "active",
+   "status": "ended",
    "endEstimated": false
   },
   {
@@ -246,7 +246,7 @@
    "endKnown": true,
    "published": "2026-11-25",
    "source": "https://www.bankygate.com/203126",
-   "status": "active",
+   "status": "ended",
    "endEstimated": false
   },
   {
@@ -267,7 +267,7 @@
    "endKnown": true,
    "published": "2026-11-25",
    "source": "https://www.bankygate.com/203111",
-   "status": "active",
+   "status": "ended",
    "endEstimated": false
   },
   {
@@ -288,7 +288,7 @@
    "endKnown": true,
    "published": "2026-11-24",
    "source": "https://www.bankygate.com/203074",
-   "status": "active",
+   "status": "ended",
    "endEstimated": false
   },
   {
@@ -372,7 +372,7 @@
    "endKnown": false,
    "published": "2026-11-22",
    "source": "https://www.bankygate.com/202952",
-   "status": "active",
+   "status": "ended",
    "endEstimated": true
   },
   {
@@ -2385,6 +2385,7 @@
   "203111": 1,
   "203115": 1,
   "203126": 1,
-  "203140": 1
+  "203140": 1,
+  "203159": 1
  }
 }
