@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T00:25:54.609Z",
+ "updatedAt": "2026-11-26T13:57:22.999Z",
  "sources": [
   "https://www.bankygate.com",
   "https://valugroup.com",
@@ -7,11 +7,6 @@
   "https://contact.eg"
  ],
  "stores": [
-  {
-   "slug": "miami-center",
-   "name": "Miami Center (ميامي سنتر)",
-   "site": "https://miamicenters.com"
-  },
   {
    "slug": "vodafone",
    "name": "Vodafone (فودافون)",
@@ -21,6 +16,11 @@
    "slug": "dubai-phone",
    "name": "Dubai Phone (دبي فون)",
    "site": "https://www.dubaiphone.net"
+  },
+  {
+   "slug": "miami-center",
+   "name": "Miami Center (ميامي سنتر)",
+   "site": "https://miamicenters.com"
   },
   {
    "slug": "dream2000",
@@ -207,6 +207,48 @@
   }
  ],
  "offers": [
+  {
+   "id": "203182",
+   "store": "vodafone",
+   "storeName": "Vodafone (فودافون)",
+   "storeSite": "https://web.vodafone.com.eg",
+   "provider": "forsa",
+   "title": "فرصة تتيح تقسيط مشتريات فودافون وأجهزة Raya Shop حتى 48 شهر",
+   "discount": null,
+   "discountUpTo": false,
+   "maxMonths": 48,
+   "downPayment": null,
+   "adminFees": null,
+   "zeroInterest": false,
+   "from": "2026-11-26",
+   "to": "2026-11-28",
+   "endKnown": true,
+   "published": "2026-11-26",
+   "source": "https://www.bankygate.com/203182",
+   "status": "active",
+   "endEstimated": false
+  },
+  {
+   "id": "203179",
+   "store": "dubai-phone",
+   "storeName": "Dubai Phone (دبي فون)",
+   "storeSite": "https://www.dubaiphone.net",
+   "provider": "souhoola",
+   "title": "أبرز عروض سهولة و Dubai Phone .. تقسيط حتى 36 شهرًا ",
+   "discount": null,
+   "discountUpTo": false,
+   "maxMonths": 36,
+   "downPayment": null,
+   "adminFees": null,
+   "zeroInterest": false,
+   "from": "2026-11-26",
+   "to": null,
+   "endKnown": false,
+   "published": "2026-11-26",
+   "source": "https://www.bankygate.com/203179",
+   "status": "active",
+   "endEstimated": true
+  },
   {
    "id": "203140",
    "store": "miami-center",
@@ -2386,6 +2428,10 @@
   "203115": 1,
   "203126": 1,
   "203140": 1,
-  "203159": 1
+  "203159": 1,
+  "203179": 1,
+  "203182": 1,
+  "203204": 1,
+  "203209": 1
  }
 }
