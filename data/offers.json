@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T13:56:35.112Z",
+ "updatedAt": "2026-11-28T00:04:50.375Z",
  "sources": [
   "https://www.bankygate.com",
   "https://valugroup.com",
@@ -8,14 +8,14 @@
  ],
  "stores": [
   {
-   "slug": "vodafone",
-   "name": "Vodafone (فودافون)",
-   "site": "https://web.vodafone.com.eg"
-  },
-  {
    "slug": "dubai-phone",
    "name": "Dubai Phone (دبي فون)",
    "site": "https://www.dubaiphone.net"
+  },
+  {
+   "slug": "vodafone",
+   "name": "Vodafone (فودافون)",
+   "site": "https://web.vodafone.com.eg"
   },
   {
    "slug": "miami-center",
@@ -208,6 +208,27 @@
  ],
  "offers": [
   {
+   "id": "203234",
+   "store": "dubai-phone",
+   "storeName": "Dubai Phone (دبي فون)",
+   "storeSite": "https://www.dubaiphone.net",
+   "provider": "forsa",
+   "title": "فرصة تتيح تقسيط مشتريات Dubai Phone",
+   "discount": 75,
+   "discountUpTo": false,
+   "maxMonths": 48,
+   "downPayment": null,
+   "adminFees": null,
+   "zeroInterest": false,
+   "from": "2026-11-27",
+   "to": "2026-11-28",
+   "endKnown": true,
+   "published": "2026-11-27",
+   "source": "https://www.bankygate.com/203234",
+   "status": "active",
+   "endEstimated": false
+  },
+  {
    "id": "203182",
    "store": "vodafone",
    "storeName": "Vodafone (فودافون)",
@@ -351,7 +372,7 @@
    "endKnown": false,
    "published": "2026-11-24",
    "source": "https://www.bankygate.com/203051",
-   "status": "active",
+   "status": "ended",
    "endEstimated": true
   },
   {
@@ -2434,6 +2455,10 @@
   "203204": 1,
   "203209": 1,
   "203212": 1,
-  "203219": 1
+  "203219": 1,
+  "203226": 1,
+  "203229": 1,
+  "203234": 1,
+  "203239": 1
  }
 }
